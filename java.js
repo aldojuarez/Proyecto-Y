@@ -1,7 +1,7 @@
-var num1 = document.getElementById('numero1').value;
-var num2 = document.getElementById('numero2').value;
-
 function Sumar()
 {
-    alert(num1+num2);
+    var num1 = document.getElementById('numero1').value;
+    var num2 = document.getElementById('numero2').value;
+    var sumatoria = parseInt(num1)+ parseInt(num2);
+    alert(sumatoria);
 }
