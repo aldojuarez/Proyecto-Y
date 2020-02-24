@@ -1,0 +1,19 @@
+body{
+    background-color: grey;
+    text-align: center;
+    color: blue;
+
+}
+
+p{
+    color: black;
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: large;
+}
+
+input{
+    background-color: white;
+    color: red;
+    text-align: center;
+}
