@@ -5,3 +5,45 @@ function Sumar()
     var sumatoria = parseInt(num1) + parseInt(num2);
     alert(sumatoria);
 }
+
+var valorGlobal = "";
+var num1;
+var num2;
+var operacion="";
+
+$(".boton").click(function()
+{
+    var valorButton = $(this).val();
+    valorGlobal+=valorButton;
+    actualizarDisplay(valorGlobal);
+})
+
+$("#suma").click(function()
+{
+    operacion = "+";
+    num1 = valorGlobal;
+    valorGlobal="";
+})
+
+$("#realizar").click(function()
+{
+    switch (operacion)
+    {
+        case '+':
+            num2 = valorGlobal;
+            valorGlobal = "";
+            actualizarDisplay(suma(num1,num2));
+            operacion="";
+            break;
+    }
+})
+
+function suma(valor1,valor2)
+{
+    return parseInt(valor1)+parseInt(valor2);
+}
+
+function actualizarDisplay(value)
+{
+    $("#visualizar").val(value);
+}
