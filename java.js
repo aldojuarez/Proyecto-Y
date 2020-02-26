@@ -48,6 +48,13 @@ $("#limpia").click(function()
 })
 
 
+$("#multiplicacion").click(function()
+{
+    operacion = "*";
+    num1 = valorGlobal;
+    valorGlobal="";
+})
+
 $("#realizar").click(function()
 {
     switch (operacion)
@@ -70,6 +77,12 @@ $("#realizar").click(function()
             actualizarDisplay(divicion(num1,num2));
             operacion="";
             break;
+        case '*':
+            num2 = valorGlobal;
+            valorGlobal = "";
+            actualizarDisplay(multiplicacion(num1,num2));
+            operacion="";
+            break;
     }
 })
 
@@ -86,6 +99,12 @@ function divicion(valor1,valor2)
 {
     return parseInt(valor1)/parseInt(valor2);
 }
+
+function multiplicacion(valor1,valor2)
+{
+    return parseInt(valor1)*parseInt(valor2);
+}
+
 
 function actualizarDisplay(value)
 {
