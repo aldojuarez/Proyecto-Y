@@ -25,12 +25,28 @@ $("#suma").click(function()
     valorGlobal="";
 })
 
+$("#resta").click(function()
+{
+    operacion = "-";
+    num1 = valorGlobal;
+    valorGlobal="";
+})
+
 $("#divicion").click(function()
 {
     operacion = "/";
     num1 = valorGlobal;
     valorGlobal="";
 })
+
+$("#limpia").click(function()
+{
+    $("#visualizar").val("");
+    operacion="";
+    valorGlobal="";
+
+})
+
 
 $("#realizar").click(function()
 {
@@ -40,6 +56,12 @@ $("#realizar").click(function()
             num2 = valorGlobal;
             valorGlobal = "";
             actualizarDisplay(suma(num1,num2));
+            operacion="";
+            break;
+         case '-':
+            num2 = valorGlobal;
+            valorGlobal = "";
+            actualizarDisplay(resta(num1,num2));
             operacion="";
             break;
         case '/':
@@ -55,6 +77,10 @@ function suma(valor1,valor2)
 {
     return parseInt(valor1)+parseInt(valor2);
 }
+function resta(valor1,valor2)
+{
+    return parseInt(valor1)-parseInt(valor2);
+}
 
 function divicion(valor1,valor2)
 {
@@ -65,3 +91,5 @@ function actualizarDisplay(value)
 {
     $("#visualizar").val(value);
 }
+
+    
