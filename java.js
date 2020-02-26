@@ -25,6 +25,13 @@ $("#suma").click(function()
     valorGlobal="";
 })
 
+$("#divicion").click(function()
+{
+    operacion = "/";
+    num1 = valorGlobal;
+    valorGlobal="";
+})
+
 $("#realizar").click(function()
 {
     switch (operacion)
@@ -35,12 +42,23 @@ $("#realizar").click(function()
             actualizarDisplay(suma(num1,num2));
             operacion="";
             break;
+        case '/':
+            num2 = valorGlobal;
+            valorGlobal = "";
+            actualizarDisplay(divicion(num1,num2));
+            operacion="";
+            break;
     }
 })
 
 function suma(valor1,valor2)
 {
     return parseInt(valor1)+parseInt(valor2);
+}
+
+function divicion(valor1,valor2)
+{
+    return parseInt(valor1)/parseInt(valor2);
 }
 
 function actualizarDisplay(value)
