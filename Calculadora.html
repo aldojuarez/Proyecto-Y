@@ -6,35 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculadora 2</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="hojaEstilo.css">
+    
 </head>
 <body>
+    <form name="calculator">
     <div>
         <input type="text" id="visualizar" value="" disabled />
         <div>
-            <button id="suma" type="button" value="+">+</button>
-            <button id="resta" type="button" value="-">-</button>
-            <button id="divicion" type="button" value="/">/</button>
-            <button id="multiplicacion" type="button" value="*">&times;</button>
-
-            <button class="boton" type="button" value="7">7</button>
-            <button class="boton" type="button" value="8">8</button>
-            <button class="boton" type="button" value="9">9</button>
+             <button class="boton" type="button" value="1">1</button>
+            <button class="boton" type="button" value="2">2</button>
+            <button class="boton" type="button" value="3">3</button>
+            <button class="operador" id="suma" type="button" value="+">+</button> <br>
 
             <button class="boton" type="button" value="4">4</button>
             <button class="boton" type="button" value="5">5</button>
             <button class="boton" type="button" value="6">6</button>
+            <button class="operador" id="resta" type="button" value="-">-</button> <br>
 
-            <button class="boton" type="button" value="1">1</button>
-            <button class="boton" type="button" value="2">2</button>
-            <button class="boton" type="button" value="3">3</button>
+            <button class="boton" type="button" value="7">7</button>
+            <button class="boton" type="button" value="8">8</button>
+            <button class="boton" type="button" value="9">9</button>
+            <button  class="operador" id="multi" type="button" value="*">&times;</button><br>
 
             <button class="boton" type="button" value="0">0</button>
-            <button type="button" value=".">.</button>
+            <button class="operador" type="button" value=".">.</button>
             <button type="button" id="limpia" value="AllClear">AC</button>
-
+            <button class="operador" id="divicion" type="button" value="/">&divide;</button>
             <button id="realizar" type="button" value="=">=</button>
         </div>
     </div>
+        </form>
     <script src="java.js"></script>
 </body>
 </html>

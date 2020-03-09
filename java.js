@@ -38,6 +38,12 @@ $("#divicion").click(function()
     num1 = valorGlobal;
     valorGlobal="";
 })
+$("#multi").click(function()
+{
+    operacion = "*";
+    num1 = valorGlobal;
+    valorGlobal="";
+})
 
 $("#limpia").click(function()
 {
@@ -77,13 +83,22 @@ $("#realizar").click(function()
             actualizarDisplay(divicion(num1,num2));
             operacion="";
             break;
+<<<<<<< HEAD
         case '*':
             num2 = valorGlobal;
             valorGlobal = "";
             actualizarDisplay(multiplicacion(num1,num2));
+=======
+
+        case '*':
+            num2 = valorGlobal;
+            valorGlobal = "";
+            actualizarDisplay(multi(num1,num2));
+>>>>>>> resta1
             operacion="";
             break;
     }
+    console.log(valorGlobal);
 })
 
 function suma(valor1,valor2)
@@ -98,6 +113,10 @@ function resta(valor1,valor2)
 function divicion(valor1,valor2)
 {
     return parseInt(valor1)/parseInt(valor2);
+}
+function multi(valor1,valor2)
+{
+    return parseInt(valor1)*parseInt(valor2);
 }
 
 function multiplicacion(valor1,valor2)
