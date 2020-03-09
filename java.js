@@ -10,6 +10,7 @@ var valorGlobal = "";
 var num1;
 var num2;
 var operacion="";
+var oldValue = "";
 
 $(".boton").click(function()
 {
@@ -20,45 +21,50 @@ $(".boton").click(function()
 
 $("#suma").click(function()
 {
-    operacion = "+";
-    num1 = valorGlobal;
-    valorGlobal="";
+    console.log(oldValue);
+    elegirOperacion("+");
 })
 
 $("#resta").click(function()
 {
-    operacion = "-";
-    num1 = valorGlobal;
-    valorGlobal="";
+    console.log(oldValue);
+    elegirOperacion("-");
 })
 
 $("#divicion").click(function()
 {
-    operacion = "/";
-    num1 = valorGlobal;
-    valorGlobal="";
+    console.log(oldValue);
+    elegirOperacion("/");
 })
-$("#multi").click(function()
+
+$("#multiplicar").click(function()
 {
-    operacion = "*";
-    num1 = valorGlobal;
-    valorGlobal="";
+    console.log(oldValue);
+    elegirOperacion("*");
 })
+
+function elegirOperacion(value)
+{
+    if (oldValue == "")
+    {
+        operacion = value;
+        num1 = valorGlobal;
+        valorGlobal="";
+    }
+    else
+    {
+        operacion = value
+        num1 = oldValue;
+        valorGlobal="";
+    }
+}
 
 $("#limpia").click(function()
 {
     $("#visualizar").val("");
-    operacion="";
     valorGlobal="";
-
-})
-
-
-$("#multiplicacion").click(function()
-{
-    operacion = "*";
-    num1 = valorGlobal;
-    valorGlobal="";
+    oldValue="";
+    cleanVar();
 })
 
 $("#realizar").click(function()
@@ -67,38 +73,29 @@ $("#realizar").click(function()
     {
         case '+':
             num2 = valorGlobal;
-            valorGlobal = "";
-            actualizarDisplay(suma(num1,num2));
-            operacion="";
+            oldValue = suma(num1,num2)
+            actualizarDisplay(oldValue);
+            cleanVar();            
             break;
          case '-':
             num2 = valorGlobal;
-            valorGlobal = "";
-            actualizarDisplay(resta(num1,num2));
-            operacion="";
+            oldValue = resta(num1,num2);
+            actualizarDisplay(oldValue);
+            cleanVar();
             break;
         case '/':
             num2 = valorGlobal;
-            valorGlobal = "";
-            actualizarDisplay(divicion(num1,num2));
-            operacion="";
+            oldValue = divicion(num1,num2);
+            actualizarDisplay(oldValue);
+            cleanVar();
             break;
-<<<<<<< HEAD
         case '*':
             num2 = valorGlobal;
-            valorGlobal = "";
-            actualizarDisplay(multiplicacion(num1,num2));
-=======
-
-        case '*':
-            num2 = valorGlobal;
-            valorGlobal = "";
-            actualizarDisplay(multi(num1,num2));
->>>>>>> resta1
-            operacion="";
+            oldValue = multiplicacion(num1,num2);
+            actualizarDisplay(oldValue);
+            cleanVar();
             break;
     }
-    console.log(valorGlobal);
 })
 
 function suma(valor1,valor2)
@@ -114,20 +111,23 @@ function divicion(valor1,valor2)
 {
     return parseInt(valor1)/parseInt(valor2);
 }
-function multi(valor1,valor2)
-{
-    return parseInt(valor1)*parseInt(valor2);
-}
 
 function multiplicacion(valor1,valor2)
 {
     return parseInt(valor1)*parseInt(valor2);
 }
 
-
 function actualizarDisplay(value)
 {
     $("#visualizar").val(value);
+}
+
+function cleanVar()
+{
+    num1="";
+    num2="";
+    operacion="";
+    valorGlobal = "";
 }
 
     
